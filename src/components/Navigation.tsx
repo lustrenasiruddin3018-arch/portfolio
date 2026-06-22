@@ -59,9 +59,9 @@ export function Navigation() {
         <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold gradient-text">AM</span>
+              <span className="text-xl font-bold gradient-text">LN</span>
               <span className={`hidden sm:block font-semibold ${isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'}`}>
-                Alex Morgan
+                Lustre
               </span>
             </Link>
 
