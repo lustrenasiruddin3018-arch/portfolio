@@ -1,289 +1,339 @@
-import type { Project, Experience, Education, Skill, Testimonial, BlogPost, Service } from '../types';
-
-export const profile = {
-  name: 'Alex Morgan',
-  title: 'Full-Stack Developer & UI/UX Designer',
-  summary: 'Passionate developer with 6+ years of experience building scalable web applications and crafting beautiful user interfaces. Specialized in React, Node.js, and cloud architecture.',
-  email: 'alex.morgan@example.com',
-  phone: '+1 (555) 123-4567',
-  location: 'San Francisco, CA',
-  github: 'https://github.com/alexmorgan',
-  linkedin: 'https://linkedin.com/in/alexmorgan',
-  twitter: 'https://twitter.com/alexmorgan',
-  resume_url: '/resume.pdf',
-  avatar_url: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-};
-
-export const stats = [
-  { label: 'Years Experience', value: 6, suffix: '+' },
-  { label: 'Projects Completed', value: 120, suffix: '+' },
-  { label: 'Happy Clients', value: 85, suffix: '+' },
-  { label: 'Certifications', value: 12, suffix: '' },
-];
-
-export const skills: Skill[] = [
-  { id: '1', name: 'React', category: 'Frontend', proficiency: 95, icon: null },
-  { id: '2', name: 'TypeScript', category: 'Frontend', proficiency: 92, icon: null },
-  { id: '3', name: 'Next.js', category: 'Frontend', proficiency: 88, icon: null },
-  { id: '4', name: 'Tailwind CSS', category: 'Frontend', proficiency: 95, icon: null },
-  { id: '5', name: 'Node.js', category: 'Backend', proficiency: 90, icon: null },
-  { id: '6', name: 'Python', category: 'Backend', proficiency: 85, icon: null },
-  { id: '7', name: 'PostgreSQL', category: 'Database', proficiency: 88, icon: null },
-  { id: '8', name: 'MongoDB', category: 'Database', proficiency: 82, icon: null },
-  { id: '9', name: 'Docker', category: 'DevOps', proficiency: 80, icon: null },
-  { id: '10', name: 'AWS', category: 'DevOps', proficiency: 78, icon: null },
-  { id: '11', name: 'Figma', category: 'Design', proficiency: 85, icon: null },
-  { id: '12', name: 'Git', category: 'Tools', proficiency: 92, icon: null },
-];
+import { Project, Experience, Education, Skill, Testimonial, Service, BlogPost } from '../types';
 
 export const projects: Project[] = [
   {
     id: '1',
     title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard. Built with scalability in mind using microservices architecture.',
-    image_url: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
+    description: 'A full-stack e-commerce solution with real-time inventory management',
+    longDescription: 'Built a comprehensive e-commerce platform featuring real-time inventory tracking, secure payment processing, and an intuitive admin dashboard. The platform handles thousands of concurrent users with optimized database queries and caching strategies.',
+    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
     technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'Web Application',
-    status: 'Completed',
-    created_at: '2024-01-01',
+    category: 'Full Stack',
+    status: 'completed',
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    features: ['Real-time inventory', 'Payment integration', 'Admin dashboard', 'Analytics'],
+    challenges: ['Scaling to 10k+ users', 'Real-time sync', 'Payment security']
   },
   {
     id: '2',
-    title: 'AI Content Generator',
-    description: 'An AI-powered content generation tool that helps marketers create blog posts, social media content, and email campaigns using GPT models.',
-    image_url: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Next.js', 'OpenAI', 'Tailwind CSS', 'Supabase'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'AI/ML',
-    status: 'Live',
-    created_at: '2024-02-15',
+    title: 'AI Dashboard',
+    description: 'Machine learning analytics dashboard with data visualization',
+    longDescription: 'Developed an AI-powered analytics dashboard that processes and visualizes complex datasets. Features include predictive modeling, automated reporting, and interactive charts for business intelligence.',
+    image: 'https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['Python', 'TensorFlow', 'React', 'D3.js', 'FastAPI'],
+    category: 'Data Science',
+    status: 'completed',
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    features: ['Predictive analytics', 'Interactive charts', 'Auto-reporting', 'ML models'],
+    challenges: ['Large dataset processing', 'Model optimization', 'Real-time updates']
   },
   {
     id: '3',
-    title: 'Real Estate Dashboard',
-    description: 'A comprehensive real estate analytics dashboard with property listings, market trends, and investment analysis tools.',
-    image_url: 'https://images.pexels.com/photos/396225/pexels-photo-396225.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'Web Application',
-    status: 'Completed',
-    created_at: '2023-11-20',
+    title: 'Social Media App',
+    description: 'Mobile-first social platform with real-time messaging',
+    longDescription: 'Created a social media application with real-time messaging, content sharing, and community features. Implemented WebSocket connections for instant updates and push notifications.',
+    image: 'https://images.pexels.com/photos/267371/pexels-photo-267371.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React Native', 'Firebase', 'GraphQL', 'TypeScript'],
+    category: 'Mobile',
+    status: 'completed',
+    githubUrl: 'https://github.com',
+    features: ['Real-time chat', 'Push notifications', 'Content feed', 'User profiles'],
+    challenges: ['Offline support', 'Message sync', 'Performance optimization']
   },
   {
     id: '4',
-    title: 'Fitness Tracking App',
-    description: 'A mobile-first fitness application with workout tracking, nutrition logging, and progress visualization.',
-    image_url: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React Native', 'Firebase', 'Chart.js'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'Mobile App',
-    status: 'In Progress',
-    created_at: '2024-03-01',
+    title: 'DevOps Pipeline',
+    description: 'CI/CD automation platform with monitoring and alerts',
+    longDescription: 'Engineered a complete DevOps pipeline with automated testing, deployment, and monitoring. Reduced deployment time by 80% and improved system reliability with proactive alerting.',
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['Docker', 'Kubernetes', 'Jenkins', 'Terraform', 'AWS'],
+    category: 'DevOps',
+    status: 'completed',
+    githubUrl: 'https://github.com',
+    features: ['Auto-deployment', 'Container orchestration', 'Monitoring', 'IaC'],
+    challenges: ['Multi-cloud setup', 'Zero-downtime deploys', 'Security compliance']
   },
   {
     id: '5',
-    title: 'Social Media Analytics',
-    description: 'Analytics platform for social media managers to track engagement, schedule posts, and generate performance reports.',
-    image_url: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Vue.js', 'Python', 'FastAPI', 'PostgreSQL'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'Web Application',
-    status: 'Live',
-    created_at: '2023-09-10',
+    title: 'FinTech API',
+    description: 'Secure financial API with blockchain integration',
+    longDescription: 'Built a secure financial API handling transactions, account management, and blockchain integration. Implemented advanced encryption and compliance with financial regulations.',
+    image: 'https://images.pexels.com/photos/730647/pexels-photo-730647.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['Node.js', 'Express', 'MongoDB', 'Web3.js', 'Solidity'],
+    category: 'Backend',
+    status: 'in-progress',
+    githubUrl: 'https://github.com',
+    features: ['Secure transactions', 'Blockchain sync', 'Multi-currency', 'Compliance'],
+    challenges: ['Security audits', 'Blockchain latency', 'Regulatory compliance']
   },
   {
     id: '6',
-    title: 'Blockchain Explorer',
-    description: 'A blockchain explorer for Ethereum with real-time transaction tracking, smart contract analysis, and wallet portfolio management.',
-    image_url: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'Web3.js', 'Node.js', 'GraphQL'],
-    github_url: 'https://github.com',
-    live_url: 'https://example.com',
-    category: 'Blockchain',
-    status: 'Completed',
-    created_at: '2023-07-05',
-  },
+    title: 'Design System',
+    description: 'Comprehensive UI component library with documentation',
+    longDescription: 'Created a comprehensive design system with 50+ reusable components, complete documentation, and accessibility features. Used across multiple projects ensuring design consistency.',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+    technologies: ['React', 'Storybook', 'TypeScript', 'CSS Modules'],
+    category: 'UI/UX',
+    status: 'completed',
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://example.com',
+    features: ['50+ components', 'Accessibility', 'Theming', 'Documentation'],
+    challenges: ['Cross-browser support', 'Accessibility standards', 'Performance']
+  }
 ];
 
 export const experiences: Experience[] = [
   {
     id: '1',
-    company: 'TechCorp Inc.',
-    role: 'Senior Full-Stack Developer',
-    duration: '2022 - Present',
-    description: 'Leading a team of 5 developers building enterprise SaaS products. Architected microservices infrastructure reducing deployment time by 60%.',
-    technologies: ['React', 'Node.js', 'AWS', 'Kubernetes'],
-    order_index: 1,
+    company: 'TechCorp Solutions',
+    role: 'Senior Full Stack Developer',
+    type: 'full-time',
+    startDate: '2022-01',
+    endDate: 'Present',
+    description: 'Leading development of enterprise web applications and mentoring junior developers.',
+    responsibilities: [
+      'Architect and develop scalable web applications',
+      'Lead a team of 5 developers',
+      'Implement CI/CD pipelines',
+      'Code review and quality assurance'
+    ],
+    technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL']
   },
   {
     id: '2',
-    company: 'StartupXYZ',
-    role: 'Full-Stack Developer',
-    duration: '2020 - 2022',
-    description: 'Built MVP from scratch to Series A. Implemented CI/CD pipelines and established coding standards across the engineering team.',
-    technologies: ['Next.js', 'Python', 'PostgreSQL', 'Docker'],
-    order_index: 2,
+    company: 'Digital Innovations',
+    role: 'Full Stack Developer',
+    type: 'full-time',
+    startDate: '2020-03',
+    endDate: '2021-12',
+    description: 'Developed and maintained multiple client projects using modern web technologies.',
+    responsibilities: [
+      'Built responsive web applications',
+      'Integrated third-party APIs',
+      'Optimized application performance',
+      'Collaborated with design team'
+    ],
+    technologies: ['Vue.js', 'Python', 'MongoDB', 'Redis']
   },
   {
     id: '3',
-    company: 'Digital Agency Pro',
-    role: 'Frontend Developer',
-    duration: '2019 - 2020',
-    description: 'Developed responsive websites and web applications for 30+ clients. Specialized in React and animation-heavy interfaces.',
-    technologies: ['React', 'GSAP', 'Sass', 'WordPress'],
-    order_index: 3,
+    company: 'Freelance',
+    role: 'Web Developer & Consultant',
+    type: 'freelance',
+    startDate: '2019-06',
+    endDate: '2020-02',
+    description: 'Delivered custom web solutions for various clients across different industries.',
+    responsibilities: [
+      'Client requirements analysis',
+      'Custom website development',
+      'Technical consulting',
+      'Project management'
+    ],
+    technologies: ['React', 'Node.js', 'WordPress', 'Shopify']
   },
   {
     id: '4',
-    company: 'Freelance',
-    role: 'Web Developer',
-    duration: '2018 - 2019',
-    description: 'Delivered custom web solutions for small businesses and startups. Gained expertise in full-stack development and client communication.',
-    technologies: ['JavaScript', 'PHP', 'MySQL', 'Bootstrap'],
-    order_index: 4,
-  },
+    company: 'StartUp Hub',
+    role: 'Junior Developer Intern',
+    type: 'internship',
+    startDate: '2018-09',
+    endDate: '2019-05',
+    description: 'Gained hands-on experience in full-stack development within an agile team.',
+    responsibilities: [
+      'Frontend development with React',
+      'API integration',
+      'Bug fixing and testing',
+      'Agile sprint participation'
+    ],
+    technologies: ['React', 'JavaScript', 'CSS', 'REST APIs']
+  }
 ];
 
-export const educations: Education[] = [
+export const education: Education[] = [
   {
     id: '1',
-    institution: 'Stanford University',
-    degree: 'M.S. Computer Science',
-    duration: '2018 - 2020',
-    description: 'Specialized in Artificial Intelligence and Distributed Systems. Thesis on scalable ML pipelines.',
-    grade: '3.9 GPA',
-    order_index: 1,
+    institution: 'University of Technology',
+    degree: 'Master of Science',
+    field: 'Computer Science',
+    startDate: '2019',
+    endDate: '2021',
+    grade: 'Distinction',
+    achievements: [
+      'Published research paper on distributed systems',
+      'Teaching Assistant for Advanced Algorithms',
+      'Dean\'s List all semesters'
+    ]
   },
   {
     id: '2',
-    institution: 'UC Berkeley',
-    degree: 'B.S. Computer Science',
-    duration: '2014 - 2018',
-    description: 'Dean\'s List all semesters. Led the Web Development Club and organized 5 hackathons.',
-    grade: '3.8 GPA',
-    order_index: 2,
-  },
+    institution: 'State University',
+    degree: 'Bachelor of Science',
+    field: 'Software Engineering',
+    startDate: '2015',
+    endDate: '2019',
+    grade: 'First Class Honors',
+    achievements: [
+      'President of Computer Science Society',
+      'Hackathon winner 2018',
+      'GPA: 3.9/4.0'
+    ]
+  }
+];
+
+export const skills: Skill[] = [
+  { id: '1', name: 'React', category: 'Frontend', proficiency: 95, icon: 'Code2' },
+  { id: '2', name: 'TypeScript', category: 'Frontend', proficiency: 90, icon: 'FileCode' },
+  { id: '3', name: 'Node.js', category: 'Backend', proficiency: 88, icon: 'Server' },
+  { id: '4', name: 'Python', category: 'Backend', proficiency: 85, icon: 'Terminal' },
+  { id: '5', name: 'PostgreSQL', category: 'Database', proficiency: 82, icon: 'Database' },
+  { id: '6', name: 'MongoDB', category: 'Database', proficiency: 80, icon: 'Database' },
+  { id: '7', name: 'Docker', category: 'DevOps', proficiency: 78, icon: 'Container' },
+  { id: '8', name: 'AWS', category: 'DevOps', proficiency: 75, icon: 'Cloud' },
+  { id: '9', name: 'GraphQL', category: 'Backend', proficiency: 85, icon: 'Share2' },
+  { id: '10', name: 'Tailwind CSS', category: 'Frontend', proficiency: 92, icon: 'Palette' },
+  { id: '11', name: 'Git', category: 'Tools', proficiency: 90, icon: 'GitBranch' },
+  { id: '12', name: 'Figma', category: 'Design', proficiency: 80, icon: 'Figma' }
 ];
 
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Sarah Chen',
-    role: 'CTO',
-    company: 'FinTech Solutions',
-    content: 'Alex delivered exceptional work on our trading platform. The code quality and attention to detail were outstanding. Highly recommend for any complex project.',
-    rating: 5,
-    avatar_url: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150',
+    name: 'Sarah Johnson',
+    role: 'CEO',
+    company: 'TechStart Inc.',
+    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200',
+    content: 'Alex delivered exceptional work on our platform. His technical expertise and attention to detail transformed our vision into reality. Highly recommended!',
+    rating: 5
   },
   {
     id: '2',
-    name: 'Michael Roberts',
-    role: 'Product Manager',
-    company: 'HealthTech Inc.',
-    content: 'Working with Alex was a game-changer. They transformed our legacy system into a modern, scalable application that our users love.',
-    rating: 5,
-    avatar_url: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150',
+    name: 'Michael Chen',
+    role: 'CTO',
+    company: 'DataFlow Systems',
+    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200',
+    content: 'Working with Alex was a game-changer for our startup. He built a scalable architecture that handled our growth seamlessly. True professional!',
+    rating: 5
   },
   {
     id: '3',
-    name: 'Emily Watson',
-    role: 'Founder',
-    company: 'EduStart',
-    content: 'Alex built our entire platform from the ground up. Their technical expertise and creative problem-solving skills are truly remarkable.',
-    rating: 5,
-    avatar_url: 'https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg?auto=compress&cs=tinysrgb&w=150',
+    name: 'Emily Rodriguez',
+    role: 'Product Manager',
+    company: 'InnovateLab',
+    image: 'https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg?auto=compress&cs=tinysrgb&w=200',
+    content: 'Alex\'s ability to understand complex requirements and deliver clean, maintainable code is remarkable. Our product quality improved significantly.',
+    rating: 5
   },
+  {
+    id: '4',
+    name: 'David Park',
+    role: 'Founder',
+    company: 'NextGen Apps',
+    image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=200',
+    content: 'Exceptional developer with great communication skills. Alex consistently delivered ahead of schedule and exceeded expectations.',
+    rating: 5
+  }
 ];
 
 export const services: Service[] = [
   {
     id: '1',
     title: 'Web Development',
-    description: 'Custom web applications built with modern technologies. From landing pages to complex SaaS platforms.',
+    description: 'Custom web applications built with modern technologies and best practices',
     icon: 'Globe',
     features: ['Responsive Design', 'SEO Optimization', 'Performance Tuning', 'CMS Integration'],
-    price_range: 'From $3,000',
+    price: 'From $2,500'
   },
   {
     id: '2',
     title: 'Frontend Development',
-    description: 'Pixel-perfect UI implementation with React, Vue, or Angular. Focus on accessibility and performance.',
-    icon: 'Monitor',
-    features: ['React/Vue/Angular', 'Animation & Interactions', 'Component Libraries', 'PWA Development'],
-    price_range: 'From $2,500',
+    description: 'Pixel-perfect UI implementation with React, Vue, or Angular',
+    icon: 'Layout',
+    features: ['React/Vue/Angular', 'Animation & Effects', 'Accessibility', 'Cross-browser Support'],
+    price: 'From $1,800'
   },
   {
     id: '3',
     title: 'Backend Development',
-    description: 'Scalable API development and database design. Secure, well-documented, and production-ready.',
+    description: 'Robust APIs and server-side solutions for scalable applications',
     icon: 'Server',
     features: ['REST/GraphQL APIs', 'Database Design', 'Authentication', 'Cloud Deployment'],
-    price_range: 'From $3,500',
+    price: 'From $2,000'
   },
   {
     id: '4',
-    title: 'Full-Stack Solutions',
-    description: 'End-to-end development from concept to deployment. Complete ownership of the technical stack.',
+    title: 'Full-Stack Development',
+    description: 'End-to-end application development from database to UI',
     icon: 'Layers',
-    features: ['Architecture Design', 'Database & API', 'Frontend & UI', 'DevOps & CI/CD'],
-    price_range: 'From $8,000',
+    features: ['Complete Solutions', 'Database to UI', 'DevOps Setup', 'Maintenance'],
+    price: 'From $4,000'
   },
   {
     id: '5',
     title: 'UI/UX Design',
-    description: 'User-centered design that converts. Wireframes, prototypes, and high-fidelity mockups.',
+    description: 'User-centered design with modern aesthetics and usability',
     icon: 'Palette',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    price_range: 'From $2,000',
+    price: 'From $1,500'
   },
   {
     id: '6',
     title: 'Technical Consulting',
-    description: 'Strategic technology advice for startups and enterprises. Architecture reviews and tech stack recommendations.',
+    description: 'Expert advice on architecture, technology stack, and best practices',
     icon: 'MessageSquare',
-    features: ['Code Reviews', 'Architecture Audit', 'Tech Stack Advice', 'Team Training'],
-    price_range: 'From $150/hr',
-  },
+    features: ['Architecture Review', 'Tech Stack Advice', 'Code Audit', 'Team Training'],
+    price: 'From $150/hr'
+  }
 ];
 
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
     title: 'Building Scalable React Applications',
-    excerpt: 'Learn the best practices for structuring large React applications with proper state management and component architecture.',
+    excerpt: 'Learn the best practices for structuring large-scale React applications with proper state management and component architecture.',
     content: 'Full article content here...',
-    category: 'Tutorial',
-    image_url: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600',
-    read_time: 8,
-    published_at: '2024-03-15',
-    slug: 'building-scalable-react-applications',
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'Development',
+    tags: ['React', 'Architecture', 'Best Practices'],
+    readTime: 8,
+    publishedAt: '2024-01-15',
+    author: 'Alex Morgan'
   },
   {
     id: '2',
-    title: 'The Future of Web Development',
-    excerpt: 'Exploring emerging trends in web development including AI integration, edge computing, and new framework capabilities.',
+    title: 'Modern CSS with Tailwind',
+    excerpt: 'Discover how Tailwind CSS can transform your workflow and help you build beautiful interfaces faster than ever.',
     content: 'Full article content here...',
-    category: 'Insights',
-    image_url: 'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600',
-    read_time: 6,
-    published_at: '2024-02-28',
-    slug: 'future-of-web-development',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'CSS',
+    tags: ['Tailwind', 'CSS', 'Design'],
+    readTime: 6,
+    publishedAt: '2024-01-10',
+    author: 'Alex Morgan'
   },
   {
     id: '3',
-    title: 'Mastering TypeScript Generics',
-    excerpt: 'A deep dive into TypeScript generics with practical examples for building type-safe, reusable components.',
+    title: 'API Design Patterns',
+    excerpt: 'Explore common API design patterns and learn how to build robust, maintainable APIs for your applications.',
     content: 'Full article content here...',
-    category: 'Tutorial',
-    image_url: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600',
-    read_time: 10,
-    published_at: '2024-01-20',
-    slug: 'mastering-typescript-generics',
+    image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'Backend',
+    tags: ['API', 'REST', 'GraphQL'],
+    readTime: 10,
+    publishedAt: '2024-01-05',
+    author: 'Alex Morgan'
   },
+  {
+    id: '4',
+    title: 'DevOps for Developers',
+    excerpt: 'A practical guide to implementing DevOps practices in your development workflow for better deployment and reliability.',
+    content: 'Full article content here...',
+    image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
+    category: 'DevOps',
+    tags: ['Docker', 'CI/CD', 'AWS'],
+    readTime: 12,
+    publishedAt: '2023-12-28',
+    author: 'Alex Morgan'
+  }
 ];

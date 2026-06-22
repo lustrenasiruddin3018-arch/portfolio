@@ -2,33 +2,38 @@ export interface Project {
   id: string;
   title: string;
   description: string;
-  image_url: string;
+  longDescription: string;
+  image: string;
   technologies: string[];
-  github_url: string | null;
-  live_url: string | null;
   category: string;
-  status: string;
-  created_at: string;
+  status: 'completed' | 'in-progress' | 'planned';
+  githubUrl?: string;
+  liveUrl?: string;
+  features: string[];
+  challenges: string[];
 }
 
 export interface Experience {
   id: string;
   company: string;
   role: string;
-  duration: string;
+  type: 'full-time' | 'part-time' | 'freelance' | 'internship';
+  startDate: string;
+  endDate: string;
   description: string;
+  responsibilities: string[];
   technologies: string[];
-  order_index: number;
 }
 
 export interface Education {
   id: string;
   institution: string;
   degree: string;
-  duration: string;
-  description: string;
-  grade: string | null;
-  order_index: number;
+  field: string;
+  startDate: string;
+  endDate: string;
+  grade?: string;
+  achievements: string[];
 }
 
 export interface Skill {
@@ -36,7 +41,7 @@ export interface Skill {
   name: string;
   category: string;
   proficiency: number;
-  icon: string | null;
+  icon: string;
 }
 
 export interface Testimonial {
@@ -44,21 +49,9 @@ export interface Testimonial {
   name: string;
   role: string;
   company: string;
+  image: string;
   content: string;
   rating: number;
-  avatar_url: string | null;
-}
-
-export interface BlogPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  category: string;
-  image_url: string | null;
-  read_time: number;
-  published_at: string;
-  slug: string;
 }
 
 export interface Service {
@@ -67,15 +60,33 @@ export interface Service {
   description: string;
   icon: string;
   features: string[];
-  price_range: string | null;
+  price?: string;
 }
 
-export interface ContactMessage {
+export interface BlogPost {
   id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  category: string;
+  tags: string[];
+  readTime: number;
+  publishedAt: string;
+  author: string;
+}
+
+export interface ContactFormData {
   name: string;
   email: string;
-  phone: string | null;
+  phone?: string;
   subject: string;
   message: string;
-  created_at: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  name?: string;
+  avatar?: string;
 }
